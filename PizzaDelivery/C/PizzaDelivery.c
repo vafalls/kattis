@@ -1,70 +1,52 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int nrOfColumns, nrOfRows;
-
-void printTown(int rows, int col, int town[col][rows]) {
-  printf("[");
-  for(int x=0; x<rows; x++){
-    for(int y=0; y<col; y++){
-      printf("%d", town[x][y]);
-    }
-    printf(" ");
-  }
-  printf("]\n");
-}
-
-
-int nrOfBlocksFromPos(int _x, int _y, int town[_x][_y]){
-  int dist = 0;
-  
-  for(int x=0; x<nrOfRows; x++){
-    for(int y=0; y<nrOfColumns; y++){
-      printf("town=%d %d,%d ",town[x][y], x, y);
-      if(town[x][y] > 0){
-        dist += (town[x][y]*((abs(_x-x))+(abs(_y-y))));
-      }
-    }
-  }
-  return dist;
-}
-
-
-void testCaseExecution() {
-  scanf("%d %d", &nrOfColumns, &nrOfRows);
-
-  int town[nrOfRows][nrOfColumns];
-
-  for(int x=0; x<nrOfRows; x++){
-    for(int y=0; y<nrOfColumns; y++){
-      scanf("%d", &town[x][y]);
-    }
-  }
-
-  printTown(nrOfRows, nrOfColumns, town);
-
-  int shortWay = 9999999;
-  int currWay=0;
-
-  for(int x=0; x<nrOfRows; x++){
-    for(int y=0; y<nrOfColumns; y++){
-      currWay = nrOfBlocksFromPos(x, y, town);
-      printf("currway: %d\n",currWay);
-      if(currWay < shortWay){
-        shortWay = currWay;
-      }
-    }
-  }
-
-  printTown(nrOfRows, nrOfColumns, town);
-  printf("%d blocks\n", shortWay);
-}
-
+struct coordinate {
+    unsigned int x;
+    unsigned int y;
+    unsigned int val;
+};
 
 int main() {
-  int nrOfTestCases;
-  scanf("%u", &nrOfTestCases);
-  for(int i=0; i<nrOfTestCases; i++){
-    testCaseExecution();
-  }
+    unsigned int nrOfTestCases, dist, nrOfColumns, nrOfRows, currShortWay, nrOfNum, nrOfNum2, TRYVERT=0;
+    scanf("%d", &nrOfTestCases);
+
+    for(unsigned int i=nrOfTestCases; i--;){//testcase
+        
+        scanf("%d %d", &nrOfColumns, &nrOfRows);
+        nrOfNum2 = nrOfRows*nrOfColumns;
+        nrOfNum = nrOfNum2-1;
+        struct coordinate town[nrOfNum2];
+
+        for(unsigned int x=nrOfRows; x--;){//creating town
+            for(unsigned int y=nrOfColumns; y--;){
+                scanf("%d", &town[nrOfNum].val);
+                town[nrOfNum].x=x;
+                town[nrOfNum].y=y;
+                nrOfNum--;
+            }
+        }
+
+        currShortWay = 2147483647;
+        for(int i=nrOfNum2; i--;){//location
+            dist=0;
+            for(int j=nrOfNum2; j--;){//to be compared
+                if(town[j].val != 0){
+                    dist += town[j].val*(abs(town[j].x-town[i].x)+abs(town[j].y-town[i].y));
+                }
+            }
+            
+            if(dist < currShortWay){
+                currShortWay = dist;
+                TRYVERT = 0;
+            } else if(i-nrOfColumns+2 >= 0 && TRYVERT==0){//try vertical instead
+                i = i-nrOfColumns+2;
+                TRYVERT = 1;
+            } else {
+                break;
+            }
+        }
+        
+        printf("%d blocks\n", currShortWay);
+    }
 }
