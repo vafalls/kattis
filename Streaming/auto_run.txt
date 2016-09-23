@@ -1,0 +1,113 @@
+python streaming_eightidea.py
+5
+1325338338022 320412 160
+1325338361231 441201 320
+1325338341231 474123 96
+1325338312302 234123 312
+1325338331141 623132 147
+5
+1325300000000 1325400000000
+1325338300000 1325338500000
+1325338336412 1325338339612
+1325338312302 1325338341231
+1325338320000 1325338340000
+402612.828
+38051.567
+1588.800
+18918.997
+12841.247
+
+python streaming_eightidea.py
+9
+10 8 1
+7 2 1
+3 2 1
+5 2 1
+6 2 1
+7 2 1
+8 2 1
+4 2 1
+9 2 1
+1
+4 7
+Correct answer is 0.011
+
+python streaming.py
+5
+30 10 1
+80 10 1
+75 55 1
+53 6 1
+95 90 1
+1
+80 90
+Correct answer is 0.010
+
+python streaming.py
+5
+1325338338022 320412 160
+1325338361231 441201 320
+1325338341231 474123 96
+1325338312302 234123 312
+1325338331141 623132 147
+1
+1325300000000 1325400000000
+Correct answer is 402612.828
+
+python streaming_fifthidea.py
+11
+60 59 1
+40 39 1
+60 20 1
+20 19 1
+70 10 1
+30 29 1
+70 20 1
+50 20 1
+40 10 1
+50 10 1
+45 10 1
+1
+30 50
+Corrects answer is 0.090
+
+python streaming.py
+2
+4 2 1
+5 3 1
+1
+5 8
+
+python streaming.py
+2
+8 2 1
+8 3 1
+1
+2 5
+
+python write_test_file.py
+
+473258077
+49505945
+
+105 192
+4 612
+261 757
+228 426
+363 674
+85 176
+127 146
+479 766
+47 75
+
+
+gcc -g -O2 -std=gnu99 -static streaming.c -lm -o streaming.exe
+./streaming.exe
+
+python -m cProfile streaming_bruteforce.py
+python -m cProfile streaming_secondidea.py
+python -m cProfile streaming_thirdidea.py
+python -m cProfile streaming_fourthidea.py
+python -m cProfile streaming_fifthidea.py
+python -m cProfile streaming_sixthidea.py
+python -m cProfile streaming_seventhidea.py

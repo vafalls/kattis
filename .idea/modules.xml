@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PhoneList/PhoneList.iml" filepath="$PROJECT_DIR$/PhoneList/PhoneList.iml" />
       <module fileurl="file://$PROJECT_DIR$/PizzaDelivery/PizzaDelivery.iml" filepath="$PROJECT_DIR$/PizzaDelivery/PizzaDelivery.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/kattis.iml" filepath="$PROJECT_DIR$/.idea/kattis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Streaming/Streaming.iml" filepath="$PROJECT_DIR$/Streaming/Streaming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../go_projs/go_projs.iml" filepath="$PROJECT_DIR$/../go_projs/go_projs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kattis.iml" filepath="$PROJECT_DIR$/kattis.iml" />
     </modules>
   </component>
 </project>

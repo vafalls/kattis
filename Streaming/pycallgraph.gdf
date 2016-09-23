@@ -1,0 +1,16 @@
+nodedef> name VARCHAR, label VARCHAR, group VARCHAR, calls INTEGER, time DOUBLE, memory_in INTEGER, memory_out INTEGER, color VARCHAR, width DOUBLE
+removeEarlierPart,removeEarlierPart,removeEarlierPart,5,8.82148742676e-05,0,0,'191,210,229',1.0000341002
+calc,calc,calc,5,0.000240087509155,0,0,'191,210,229',1.00009280648
+<lambda>,<lambda>,<lambda>,10,4.36305999756e-05,0,0,'153,152,229',1.00001686585
+__main__,__main__,__main__,1,0,0,0,'221,228,229',1.0
+<module>,<module>,<module>,3,8.8900783062,0,0,'229,53,176',3.0
+scanData,scanData,scanData,1,8.88748407364,0,0,'229,68,213',2.99963104509
+removeLaterPart,removeLaterPart,removeLaterPart,5,4.72068786621e-05,0,0,'191,210,229',1.00001824829
+edgedef> node1 VARCHAR, node2 VARCHAR, label VARCHAR, labelvisible VARCHAR, directed BOOLEAN, color VARCHAR, width DOUBLE
+<module>,calc,5,true,true,'148,163,178',1.0
+<module>,<lambda>,10,true,true,'119,118,178',2.0
+<module>,removeEarlierPart,5,true,true,'148,163,178',1.0
+<module>,scanData,1,true,true,'178,53,166',0.2
+<module>,removeLaterPart,5,true,true,'148,163,178',1.0
+scanData,<module>,2,true,true,'178,47,152',0.4
+__main__,<module>,1,true,true,'178,53,166',0.2
